@@ -1,0 +1,42 @@
+//
+//  WeChat.pch
+//  WeChat
+//
+//  Created by Mac on 15/11/3.
+//  Copyright © 2015年 Macmini. All rights reserved.
+//
+
+#ifndef WeChat_pch
+#define WeChat_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "WCAccount.h"
+#import "WCXMPPTool.h"
+
+
+#import "MBProgressHUD+MJ.h"
+#import "CategoryWF.h"
+
+// 静态变量(服务器域名、IP和当前设备)
+static NSString *WCHostName = @"192.168.1.102";
+static NSString *WCDomain = @"dreamer.local";
+static NSString *WCDeviceModel = @"iPhone 5S";
+static int WCHostPort = 5222;
+
+// 自定义日志
+#ifdef DEBUG
+#define WCLog(...) NSLog(@"%s\n\t%@\n\n", __func__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define WCLog(...)
+#endif
+
+/* 启动XMPP服务器命令
+sudo su
+chmod -R 777 /usr/local/openfire/bin
+export JAVA_HOME=`/usr/libexec/java_home`
+echo $JAVA_HOME /Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home
+/usr/local/openfire/bin/openfire.sh
+*/
+
+#endif /* WeChat_pch */

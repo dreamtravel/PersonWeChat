@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "DDTTYLogger.h"
+#import "DDLog+LOGV.h"
+
 
 @interface AppDelegate ()
 
@@ -14,9 +17,16 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    WCAccount *account = [WCAccount shareAccount];
+    
+    if (account.isLogin) {
+        [[WCXMPPTool sharedWCXMPPTool] xmpplogin:nil];
+
+        id vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];;
+        self.window.rootViewController = vc;
+    }
     return YES;
 }
 

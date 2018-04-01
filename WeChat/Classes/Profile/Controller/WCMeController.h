@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  WCMeController.h
 //  WeChat
 //
 //  Created by Mac on 15/11/3.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface WCMeController : UITableViewController
 
 @end
-
